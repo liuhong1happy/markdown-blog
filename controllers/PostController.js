@@ -14,7 +14,6 @@ class PostController extends Controller {
     POST(req, res, next, params) {
         const files = JSON.parse(fs.readFileSync('assets/files.json'));
         const url = new URL(req.url, 'http://example.com')
-        console.log(url.searchParams.get("url"));
         const results = files.filter(function(file){ return file.path == url.searchParams.get("url")});
         const resultModel = new Model();
         resultModel.setData(results);

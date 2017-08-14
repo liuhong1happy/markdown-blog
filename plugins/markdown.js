@@ -21,6 +21,7 @@ const MarkdownPlugin = function(assetsDir) {
             //用fs.stat方法获取文件
             try{
                 const stats = fs.statSync(realPath);
+                
                 if (stats.isDirectory()) {
                     next();
                 } else {

@@ -25,7 +25,7 @@ var parseArchiveToHtml = function(objArchives) {
         var count = objArchives[tag];
         var item = document.createElement('li');
         item.classList.add("tag-box");
-        item.innerHTML = `<a>${tag}年<span>${count}</span></a>`;
+        item.innerHTML = `<a href="/archive#archive#${tag}">${tag}年<span>${count}</span></a>`;
         articles.appendChild(item);
     })
 } 

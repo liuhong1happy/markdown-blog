@@ -73,7 +73,7 @@ header {
 }
 
 .link-item:hover, .link-item.active {
-    color: #666;
+    color: #8e5c1a;
 }
 
 .blog-name {
@@ -159,4 +159,11 @@ h1 small{
 .page-info {
     line-height: 1.42857143;
     color: #333;
+}
+
+pre {
+    color: #666;
+    background-color: #f6f8fa;
+    padding: 20px;
+    box-shadow: inset 0px 0px 20px #AD7328;
 }

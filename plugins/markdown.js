@@ -3,6 +3,13 @@ import fs from 'fs';
 import path from 'path';
 import marked from 'marked';
 
+// Synchronous highlighting with highlight.js
+marked.setOptions({
+    highlight: function (code) {
+      return require('highlight.js').highlightAuto(code).value;
+    }
+});
+
 const MarkdownPlugin = function(assetsDir) {
     return function Markdown(request, response, next) {
         const obj = url.parse(request.url);

@@ -24,7 +24,7 @@ const parseFileList = function(assetsDir, fileList) {
         const reg = /^\<\!\-\-\$\$json\$\$([\s\S]*?)\-\-\>/gm;
         const result = reg.exec(content);
         const data = {
-            path: file.replace(`${assetsDir}/`, "")
+            path: file.replace(`${assetsDir}`, "")
         };
 
         const fileComment = result[1] ? JSON.parse(result[1].replace("\n", "")) : {};

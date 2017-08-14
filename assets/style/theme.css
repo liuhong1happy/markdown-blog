@@ -3,6 +3,12 @@ body {
     margin: 0px;
     padding: 0px;
     color: #AD7328;
+    font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
+    color: #8e5c1a;
 }
 
 footer {
@@ -131,4 +137,26 @@ a:hover {
 
 img {
     max-width: 1100px;
+}
+
+h1{
+    line-height: 50px;
+    color: #ea3e0a;
+}
+
+h1 small{
+    font-size: 65%;
+    color: #AD7328;
+    margin-left: 20px;
+}
+
+.page-header {
+    padding-bottom: 9px;
+    margin: 40px 0 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.page-info {
+    line-height: 1.42857143;
+    color: #333;
 }

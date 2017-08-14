@@ -20,11 +20,11 @@ var parseArchivePostsToHtml = function(objArchives, files) {
         postContainer.classList.add("main-section");
         postContainer.innerHTML = 
             `
-                <h2 id="tag#${tag}年">${tag}年</h2>
-                <ul id="posts#${tag}年" class="posts"> 
+                <h2 id="archive#${tag}">${tag}年</h2>
+                <ul id="posts#${tag}" class="posts"> 
                 ${_files.map(function(_file){ 
                     var date = new Date(_file.date);
-                    return `<li><span>${date.getFullYear()}年${date.getMonth()+1}月${date.getDate()}日</span> » <a href="/post/?url=/${_file.path}">${_file.title}</a></li>` 
+                    return `<li><span>${date.getFullYear()}年${date.getMonth()+1}月${date.getDate()}日</span> » <a href="/post/?url=${_file.path}">${_file.title}</a></li>` 
                 })}
                 </ul>
             `;
@@ -42,7 +42,7 @@ window.Ajax({
             var arr = location.hash.split('#');
             var tag = arr[arr.length-1];
             var a = document.createElement('a');
-            a.href = "#tag#"+tag;
+            a.href = "#archive#"+tag;
             a.click();
         }
     }

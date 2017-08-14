@@ -3,7 +3,7 @@ var parseFilesToHtml = function(files){
     files.forEach(function(file){
         var item = document.createElement('li');
         var date = new Date(file.date);
-        item.innerHTML = `<span>${date.getFullYear()}年${date.getMonth()+1}月${date.getDate()}日</span> » <a href="/post?url=/${file.path}">${file.title}</a>`;
+        item.innerHTML = `<span>${date.getFullYear()}年${date.getMonth()+1}月${date.getDate()}日</span> » <a href="/post?url=${file.path}">${file.title}</a>`;
         articles.appendChild(item);
     })
 }

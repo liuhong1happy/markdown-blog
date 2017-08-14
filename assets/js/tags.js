@@ -21,7 +21,7 @@ var parseTagsPostsToHtml = function(objTags, files) {
                 <ul id="posts#${tag}" class="posts"> 
                 ${_files.map(function(_file){ 
                     var date = new Date(_file.date);
-                    return `<li><span>${date.getFullYear()}年${date.getMonth()+1}月${date.getDate()}日</span> » <a href="/post?url=/${_file.path}">${_file.title}</a></li>` 
+                    return `<li><span>${date.getFullYear()}年${date.getMonth()+1}月${date.getDate()}日</span> » <a href="/post?url=${_file.path}">${_file.title}</a></li>` 
                 })}
                 </ul>
             `;

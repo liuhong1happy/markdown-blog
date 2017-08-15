@@ -5,11 +5,10 @@
         "title": "漫谈前端体系建设",
         "subtitle": "说的很有道理",
         "tags": [
-            "交互视觉设计",
-            "前端",
-            "后端"
+            "前端"
         ],
-        "author": "流形"
+        "author": "流形",
+        "resource": "https://zhuanlan.zhihu.com/p/28299873"
     },
     {
         "path": "/lifestyle/chengdu.md",
@@ -17,13 +16,10 @@
         "title": "我在成都的生活方式",
         "subtitle": "最简单的自己",
         "tags": [
-            "生活方式",
-            "成都",
-            "大学",
-            "就业",
-            "居住"
+            "成都"
         ],
-        "author": "admin"
+        "author": "admin",
+        "resource": ""
     },
     {
         "path": "/react/react-visual-dom.md",
@@ -34,6 +30,7 @@
             "react",
             "虚拟dom"
         ],
-        "author": "admin"
+        "author": "admin",
+        "resource": ""
     }
 ]

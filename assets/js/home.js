@@ -21,7 +21,7 @@ var parseTagsToHtml = function(objTags) {
 
 var parseArchiveToHtml = function(objArchives) {
     var articles = document.getElementById('archive');
-    Object.keys(objArchives).forEach(tag=>{
+    Object.keys(objArchives).sort((a,b)=>parseInt(a)<parseInt(b)).forEach(tag=>{
         var count = objArchives[tag];
         var item = document.createElement('li');
         item.classList.add("tag-box");

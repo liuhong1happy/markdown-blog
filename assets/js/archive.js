@@ -1,6 +1,6 @@
 var parseArchiveToHtml = function(objArchives) {
     var articles = document.getElementById('archive');
-    Object.keys(objArchives).forEach(tag=>{
+    Object.keys(objArchives).sort((a,b)=>parseInt(a)<parseInt(b)).forEach(tag=>{
         var count = objArchives[tag];
         var item = document.createElement('li');
         item.classList.add("tag-box");
@@ -11,7 +11,7 @@ var parseArchiveToHtml = function(objArchives) {
 
 var parseArchivePostsToHtml = function(objArchives, files) {
     var mainContainer = document.getElementById('mainContainer');
-    Object.keys(objArchives).forEach(tag=>{
+    Object.keys(objArchives).sort((a,b)=>parseInt(a)<parseInt(b)).forEach(tag=>{
         var _files = files.filter(function(file){  
             var date = new Date(file.date);
             return date.getFullYear()==tag; 

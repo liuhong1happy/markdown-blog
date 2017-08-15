@@ -3,12 +3,32 @@ import fs from 'fs';
 import path from 'path';
 import marked from 'marked';
 
+var renderer = new marked.Renderer();
+
+renderer.heading = function (text, level) {
+ return `<h${level} id="${text}">${text}</h${level}>`;
+},
+
+renderer.link = function(href,title, text){
+    return `<a href="${href}" title="${title||href}" target="_blank">${text}</a>`;
+},
+
 // Synchronous highlighting with highlight.js
 marked.setOptions({
+    renderer: renderer,
+    gfm: true,
+    tables: true,
+    breaks: false,
+    pedantic: false,
+    sanitize: false,
+    smartLists: true,
+    smartypants: false,
     highlight: function (code) {
       return require('highlight.js').highlightAuto(code).value;
     }
 });
+
+
 
 const MarkdownPlugin = function(assetsDir) {
     return function Markdown(request, response, next) {

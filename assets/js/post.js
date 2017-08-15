@@ -19,6 +19,10 @@ window.Ajax({
             document.getElementById("postTitle").innerHTML = `${files[0].title || ""}<small>${files[0].subtitle || ""}</small>`
             document.getElementById("postDate").innerHTML = `最新更新时间：${new Date(files[0].date).Format("yyyy年MM月dd日") || ""}`
             document.getElementById("postAuthor").innerHTML = `作者：${files[0].author || ""}`
+
+            if(files[0].resource) {
+                document.getElementById("postResource").innerHTML = `原文链接：<a href="${files[0].resource}" target="_blank">${files[0].resource}</a>`
+            }
         }
     }
 })

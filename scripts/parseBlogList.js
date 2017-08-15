@@ -30,7 +30,7 @@ const parseFileList = function(assetsDir, fileList) {
         const fileComment = result[1] ? JSON.parse(result[1].replace("\n", "")) : {};
         const fileStatus = fs.statSync(file);
         const fileContent = fs.content;
-        ["date", "title", "subtitle", "tags", "author"].forEach(key=>{
+        ["date", "title", "subtitle", "tags", "author", "resource"].forEach(key=>{
             switch(key) {
                 case "date":
                     data["date"] = new Date(fileComment.date || fileStatus.mtime);
@@ -47,6 +47,9 @@ const parseFileList = function(assetsDir, fileList) {
                 case "author":
                     data["author"] = fileComment.author || "admin";
                     break;
+                case "resource":
+                    data["resource"] = fileComment.resource || "";
+                    break;
             }
         })
         
@@ -56,7 +59,9 @@ const parseFileList = function(assetsDir, fileList) {
 
 const ParseBlogList = function(assetsDir) {
     readDir(assetsDir)
-    const json = JSON.stringify(parseFileList(assetsDir, readDir(assetsDir)), null, 4);
+    const fileList = parseFileList(assetsDir, readDir(assetsDir));
+    fileList.sort((a,b)=>new Date(a.date)<new Date(b.date));
+    const json = JSON.stringify(fileList, null, 4);
     fs.writeFileSync("assets/files.json", json, 'utf-8');
 }
 

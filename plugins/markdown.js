@@ -13,7 +13,7 @@ marked.setOptions({
 const MarkdownPlugin = function(assetsDir) {
     return function Markdown(request, response, next) {
         const obj = url.parse(request.url);
-        const pathname = obj.pathname;
+        const pathname = decodeURIComponent(obj.pathname);
         console.log(obj);
         const realPath = path.join(assetsDir, path.normalize(pathname.replace(/\.\./g, "")));
         console.log(realPath);

@@ -23,15 +23,19 @@
 
 1. 添加用户
 
-use mysql
-create user 'username'@'host' IDENTIFIED BY 'password';
-grant privileges on databasename.tablename to 'username'@'host'
+    ```shell
+    use mysql
+    create user 'username'@'host' IDENTIFIED BY 'password';
+    grant privileges on databasename.tablename to 'username'@'host'
 
-PS: privileges - 用户的操作权限,如SELECT , INSERT , UPDATE 等(详细列表见该文最后面).如果要授予所的权限则使用ALL.;databasename - 数据库名,tablename-表名,如果要授予该用户对所有数据库和表的相应操作权限则可用\*表示, 如\*.\*.
+    PS: privileges - 用户的操作权限,如SELECT , INSERT , UPDATE 等(详细列表见该文最后面).如果要授予所的权限则使用ALL.;databasename - 数据库名,tablename-表名,如果要授予该用户对所有数据库和表的相应操作权限则可用\*表示, 如\*.\*.
+    ```
 
 1. 修改用户密码
 
-use mysql
-update user set authentication_string=password('password') where user='username' and Host = 'localhost';
+    ```shell
+    use mysql
+    update user set authentication_string=password('password') where user='username' and Host = 'localhost';
 
-set password for 'username'@'host'=password('newpassword');
+    set password for 'username'@'host'=password('newpassword');
+    ```

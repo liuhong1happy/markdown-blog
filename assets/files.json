@@ -22,6 +22,17 @@
         "resource": "https://zhuanlan.zhihu.com/p/28299873"
     },
     {
+        "path": "/mysql/mysql-manage.md",
+        "date": "2017-08-12T03:53:00.000Z",
+        "title": "Mysql数据库管理",
+        "subtitle": "专业人士阅读",
+        "tags": [
+            "mysql"
+        ],
+        "author": "admin",
+        "resource": ""
+    },
+    {
         "path": "/lifestyle/chengdu.md",
         "date": "2017-08-11T10:03:00.000Z",
         "title": "我在成都的生活方式",
@@ -51,6 +62,18 @@
         "tags": [
             "react",
             "虚拟dom"
+        ],
+        "author": "admin",
+        "resource": ""
+    },
+    {
+        "path": "/unity/Strange: the IoC framework for Unity.md",
+        "date": "2015-12-10T10:03:00.000Z",
+        "title": "Strange: the IoC framework for Unity",
+        "subtitle": "翻译此文是一种美德",
+        "tags": [
+            "StrangeIoc",
+            "Unity3d"
         ],
         "author": "admin",
         "resource": ""
